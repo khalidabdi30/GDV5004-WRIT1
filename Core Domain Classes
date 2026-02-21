@@ -1,0 +1,21 @@
+#pragma once
+#include <string>
+#include <vector>
+#include <memory>
+
+class SceneNode {
+public:
+    explicit SceneNode(const std::string& name);
+
+    void addChild(std::shared_ptr<SceneNode> child);
+    void setMeshFile(const std::string& mesh);
+
+    const std::string& getName() const;
+    const std::string& getMeshFile() const;
+    const std::vector<std::shared_ptr<SceneNode>>& getChildren() const;
+
+private:
+    std::string m_name;
+    std::string m_meshFile;
+    std::vector<std::shared_ptr<SceneNode>> m_children;
+};

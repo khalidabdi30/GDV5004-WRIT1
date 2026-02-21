@@ -1,0 +1,10 @@
+<scene>
+  <nodes>
+    <node name="RootNode">
+      <entity meshFile="missing.mesh"/>
+      <node name="ChildNode">
+        <entity meshFile="tree.mesh"/>
+      </node>
+    </node>
+  </nodes>
+</scene>

@@ -1,0 +1,18 @@
+@startuml
+title System Sequence Diagram – Validate Scene File
+
+actor User
+participant "Scene File Verifier" as Verifier
+participant "Scene Loader" as Loader
+participant "Validator" as Validator
+
+User -> Verifier : LoadScene(file)
+Verifier -> Loader : parseScene(file)
+Loader --> Verifier : Scene
+
+User -> Verifier : ValidateScene()
+Verifier -> Validator : validate(Scene)
+Validator --> Verifier : ValidationIssues
+Verifier --> User : Validation Report
+
+@enduml

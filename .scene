@@ -1,0 +1,7 @@
+<scene>
+  <nodes>
+    <node name="Root">
+      <entity meshFile="missing.mesh"/>
+    </node>
+  </nodes>
+</scene>

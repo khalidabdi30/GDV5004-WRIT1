@@ -1,0 +1,52 @@
+@startuml
+title Scene File Verifier – Class Diagram
+
+class Scene {
+    - root : SceneNode
+    + getRoot() : SceneNode
+    + setRoot(node : SceneNode) : void
+}
+
+class SceneNode {
+    - name : String
+    - meshFile : String
+    - children : List<SceneNode>
+    - light : Light
+    - camera : Camera
+    - terrain : Terrain
+
+    + getName() : String
+    + getMeshFile() : String
+    + addChild(node : SceneNode) : void
+    + getChildren() : List<SceneNode>
+}
+
+class SceneObject {
+    - name : String
+    + getName() : String
+}
+
+class Light
+class Camera
+class Terrain {
+    - heightmap : String
+    + getHeightmap() : String
+}
+
+class ValidationIssue {
+    + severity : String
+    + message : String
+}
+
+Scene "1" *-- "1" SceneNode : root
+SceneNode "1" *-- "0..*" SceneNode : children
+
+SceneNode o-- Light
+SceneNode o-- Camera
+SceneNode o-- Terrain
+
+SceneObject <|-- Light
+SceneObject <|-- Camera
+SceneObject <|-- Terrain
+
+@enduml

@@ -1,0 +1,5 @@
+add_executable(SceneVerifier
+    main.cpp
+    Scene.cpp
+    SceneNode.cpp
+)
